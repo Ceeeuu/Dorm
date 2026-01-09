@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="zh-Hant">
+<head>
+    <meta charset="UTF-8">
+    <title>DormWatch</title>
+    <link rel="icon" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <h1>DormWatch - 宿舍匿名回報平台</h1>
+        <div class="user-area" id="userArea">
+            <span id="userDisplay">未登入</span>
+            <button id="logoutBtn" style="display:none;">登出</button>
+        </div>
+    </header>
+    <main>
+        <section class="report-list" id="reportList"></section>
+        <aside class="report-form">
+            <div class="auth-forms">
+                <h2>登入 / 註冊</h2>
+                <input type="text" id="username" placeholder="帳號 (至少 3 字元)" maxlength="80">
+                <input type="password" id="password" placeholder="密碼 (至少 6 字元)">
+                <div style="display:flex; gap:8px;">
+                    <button id="loginBtn">登入</button>
+                    <button id="registerBtn">註冊</button>
+                </div>
+            </div>
+
+            <hr>
+
+            <h2>新增回報（可匿名）</h2>
+            <input type="text" id="room" placeholder="房號 (eg Z301)" maxlength="20">
+            <textarea id="content" placeholder="輸入你的回報..." maxlength="1000"></textarea>
+            <button id="sendBtn">發送</button>
+            <p style="font-size:12px;color:#666;margin-top:8px;">* 點贊需要先登入（示範不同身分資源存取）</p>
+        </aside>
+    </main>
+    <footer>
+        <p>DormWatch © 2026 校園宿舍匿名回報</p>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>

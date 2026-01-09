@@ -1,0 +1,12 @@
+version: '3.8'
+services:
+  backend:
+    build: ./backend
+    ports:
+      - "5000:5000"
+    environment:
+      - SECRET_KEY=change_this_secret_in_prod
+      - SESSION_COOKIE_SECURE=False
+    volumes:
+      - ./backend:/app
+      - ./backend/dormwatch.db:/app/dormwatch.db

@@ -1,0 +1,119 @@
+/* 基本設定 */
+body {
+    font-family: 'Noto Sans TC', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f4f4f4;
+    min-height: 100vh;
+}
+
+header {
+    background-color: #4a90e2;
+    color: white;
+    text-align: center;
+    padding: 14px 20px;
+    box-shadow: 0 4px 8px rgba(0,0,0,0.12);
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+}
+
+h1 { margin: 0; font-size: 20px; }
+
+.user-area { margin-right:20px; }
+
+main {
+    display: flex;
+    min-height: calc(100vh - 120px);
+    padding: 10px;
+}
+
+.report-list {
+    flex: 2;
+    padding: 20px;
+    overflow-y: auto;
+    display: flex;
+    flex-direction: column-reverse; /* 最新回報在最上 */
+}
+
+.report-form {
+    flex: 1;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 12px;
+    margin-left: 15px;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+.report-form h2 { margin-top: 0; color:#4a90e2; }
+
+input, textarea {
+    margin-bottom: 10px;
+    padding: 10px;
+    font-size: 14px;
+    width: 100%;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    box-sizing: border-box;
+    transition: all 0.15s;
+}
+
+input:focus, textarea:focus {
+    border-color: #4a90e2;
+    box-shadow: 0 0 5px rgba(74,144,226,0.25);
+    outline: none;
+}
+
+button {
+    padding: 10px;
+    font-size: 14px;
+    background-color: #4a90e2;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.15s;
+}
+
+button:hover { background-color: #357ab7; }
+
+.report {
+    background-color: #fff;
+    margin-bottom: 12px;
+    padding: 14px;
+    border-radius: 12px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.06);
+}
+
+.report.new { 
+    animation: fadeIn 0.32s ease-in-out;
+}
+
+.report .meta { color:#777; font-size:13px; display:flex; gap:8px; align-items:center; }
+.report .nickname { font-weight: bold; color: #4a90e2; }
+.report .content { margin-top: 8px; font-size: 15px; line-height: 1.4; white-space:pre-wrap; }
+.like-btn {
+    color: #e94e77;
+    cursor: pointer;
+    font-weight: bold;
+    margin-left: 10px;
+    user-select: none;
+}
+
+.report-list::-webkit-scrollbar { width: 8px; }
+.report-list::-webkit-scrollbar-thumb { background-color: rgba(0,0,0,0.12); border-radius: 4px; }
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: rgba(255,255,255,0.3);
+    color: #333;
+}
+
+/* 動畫 */
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(16px); }
+    to { opacity: 1; transform: translateY(0); }
+}
